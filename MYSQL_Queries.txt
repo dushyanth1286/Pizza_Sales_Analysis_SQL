@@ -110,7 +110,8 @@ FROM
     cte
 ORDER BY rev_gen DESC;
 -----------------------------------------------------------------------------------------------------------------------------------------------
-10. WITH cte AS (
+10. Determine the top 3 most ordered pizza types based on revenue for each pizza category.
+WITH cte AS (
     SELECT pt.category, pt.name, ROUND(SUM(od.quantity * p.price), 0) AS revenue
     FROM 
         pizza_types pt
